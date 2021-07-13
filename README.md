@@ -48,3 +48,21 @@
 *Write code which will print answers from the example. Besides, correct the mistake in constructor*
 
 [Look here](https://codepen.io/viktor_sha/pen/LYyboMG)
+
+# Task 3
+
+<h3>1. Work with table, setTimeout() and setInterval() functions </h3>
+
+*Create a table consisting of data from the example. Create a button, which will 
+in delay of 3 seconds after click execute a check of table statuses. 
+Change "Pending" statuses to "Done". You can change 1 status every 5 seconds. 
+After no "Pending" status is available, finish the timer work. 
+Each function call should be started with "Check started".*
+
+[Look here](https://codepen.io/viktor_sha/pen/xxdgxJq)
+
+<h3>2. Update one of the inputs after finishing user input </h3>
+
+*Create two inputs in one form. On update of the input after 1 second update another input.*
+
+[Look here](https://codepen.io/viktor_sha/pen/QWvdWVX)
