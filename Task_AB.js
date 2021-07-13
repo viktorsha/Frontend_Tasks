@@ -37,7 +37,7 @@ if (!Array.prototype.reduce) {
     }
 }
 
-const notes = [
+const NOTES = [
     {
         id: 1,
         title: "Recipe",
@@ -78,14 +78,14 @@ const mapResult = notes.map(function mapping(note) {
         title: note.title
     }
 })
-const mapArrowResult = notes.map(x => ({id: x.id, title: x.title}))
+const mapArrowResult = notes.map(note => ({id: note.id, title: note.title}))
 console.log(mapResult)
 console.log(mapArrowResult)
 
 //task b.2
-const filtered = notes.filter(x => x.isMarked)
+const filtered = notes.filter(note => note.isMarked)
 console.log(filtered)
 
 //task b.3
-const reduced = notes.reduce((prev, item) => prev + item.pagesCount, 0)
+const reduced = notes.reduce((prev, currentNote) => prev + currentNote.pagesCount, 0)
 console.log(reduced)
