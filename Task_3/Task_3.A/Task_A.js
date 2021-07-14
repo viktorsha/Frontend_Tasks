@@ -24,52 +24,52 @@ const DOWNLOADS = [
         title: "Books",
         status: "Failed"
     }
-]
+];
+const STATUSES = {pending: "Pending", done: "Done", failed: "Failed", end: "End"};
 
 function generateTableHead(table, data) {
-    let thead = table.createTHead();
-    let row = thead.insertRow();
+    const THEAD = table.createTHead();
+    const ROW = THEAD.insertRow();
     for (let key of data) {
-        let th = document.createElement("th");
-        let text = document.createTextNode(key);
-        th.appendChild(text);
-        row.appendChild(th);
+        const TH = document.createElement("th");
+        const TEXT = document.createTextNode(key);
+        TH.appendChild(TEXT);
+        ROW.appendChild(TH);
     }
 }
 
 function generateTable(table, data) {
     for (let element of data) {
-        let row = table.insertRow();
-        for (key in element) {
-            let cell = row.insertCell();
-            let text = document.createTextNode(element[key]);
-            cell.appendChild(text);
+        const ROW = table.insertRow();
+        for (let key in element) {
+            const CELL = ROW.insertCell();
+            const TEXT = document.createTextNode(element[key]);
+            CELL.appendChild(TEXT);
         }
     }
 }
 
-function checkStatuses(table) {
-    console.log("Check started")
-    for (let row of table.rows) {
-        for (let cell of row.cells) {
-            if (cell.innerHTML === "Pending") {
-                cell.innerHTML = "Done"
-                return
-            }
+function checkStatuses() {
+    console.log("Check started");
+    const CELLS = document.getElementsByTagName("td");
+    for (const cell of CELLS) {
+        if (cell.innerHTML === STATUSES.pending) {
+            cell.innerHTML = STATUSES.done;
+            return;
         }
     }
-    return "end"
+    return STATUSES.end;
 }
 
-let table = document.querySelector("table");
-let headerData = Object.keys(DOWNLOADS[0]);
-generateTableHead(table, headerData);
-generateTable(table, DOWNLOADS);
+const TABLE = document.querySelector("table");
+const HEADERDATA = Object.keys(DOWNLOADS[0]);
+generateTableHead(TABLE, HEADERDATA);
+generateTable(TABLE, DOWNLOADS);
 
-function runner() {
-    var interval = setInterval(function () {
-        var result = checkStatuses(table)
-        if (result === "end")
-            clearInterval(interval)
-    }, 5000)
+function statusChecker() {
+    const INTERVAL = setInterval(function () {
+        const RESULT = checkStatuses(TABLE)
+        if (RESULT === STATUSES.end)
+            clearInterval(INTERVAL);
+    }, 5000);
 }

@@ -2,23 +2,23 @@
 
 if (!Array.prototype.map) {
     Array.prototype.map = function (callback) {
-        let arr = []
+        let arr = [];
         for (let i = 0; i < this.length; i++) {
-            arr.push(callback(this[i], i, this))
+            arr.push(callback(this[i], i, this));
         }
-        return arr
+        return arr;
     }
 }
 
 if (!Array.prototype.filter) {
     Array.prototype.filter = function (callback, context) {
-        let arr = []
+        let arr = [];
         for (let i = 0; i < this.length; i++) {
             if (callback.call(context, this[i], i, this)) {
-                arr.push(this[i])
+                arr.push(this[i]);
             }
         }
-        return arr
+        return arr;
     }
 }
 
@@ -28,12 +28,12 @@ if (!Array.prototype.reduce) {
 
         for (let i = 0; i < this.length; i++) {
             if (accumulator !== undefined) {
-                accumulator = callback.call(undefined, accumulator, this[i], i, this)
+                accumulator = callback.call(undefined, accumulator, this[i], i, this);
             } else {
-                accumulator = this[i]
+                accumulator = this[i];
             }
         }
-        return accumulator
+        return accumulator;
     }
 }
 
@@ -78,14 +78,14 @@ const mapResult = notes.map(function mapping(note) {
         title: note.title
     }
 })
-const mapArrowResult = notes.map(note => ({id: note.id, title: note.title}))
-console.log(mapResult)
-console.log(mapArrowResult)
+const mapArrowResult = notes.map(note => ({id: note.id, title: note.title}));
+console.log(mapResult);
+console.log(mapArrowResult);
 
 //task b.2
-const filtered = notes.filter(note => note.isMarked)
-console.log(filtered)
+const filtered = notes.filter(note => note.isMarked);
+console.log(filtered);
 
 //task b.3
-const reduced = notes.reduce((prev, currentNote) => prev + currentNote.pagesCount, 0)
-console.log(reduced)
+const reduced = notes.reduce((prev, currentNote) => prev + currentNote.pagesCount, 0);
+console.log(reduced);

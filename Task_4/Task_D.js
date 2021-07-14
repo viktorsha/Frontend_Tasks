@@ -16,18 +16,18 @@ async function loadJson(url) {
 }
 
 async function demoGithubUser() {
-    let user
+    let user;
     while (true) {
-        let name = prompt("Login?", "iliakan");
+        const NAME = prompt("Login?", "iliakan");
 
         try {
-            user = await loadJson(`https://api.github.com/users/${name}`)
-            break
+            user = await loadJson(`https://api.github.com/users/${NAME}`);
+            break;
         } catch (err) {
             if (err instanceof HttpError && err.response.status == 404) {
-                alert("We can't find such user. Try again ")
+                alert("We can't find such user. Try again ");
             } else {
-                throw err
+                throw err;
             }
         }
     }

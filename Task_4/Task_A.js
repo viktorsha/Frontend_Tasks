@@ -1,7 +1,7 @@
 function delay(duration){
     return new Promise(()=>{
         setTimeout(logHi, duration)
-    })
+    });
 }
 function logHi(){
     console.log("Hi");

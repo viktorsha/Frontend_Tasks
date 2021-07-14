@@ -1,12 +1,12 @@
 function makeDroids() {
-    const droids = [];
+    const DROIDS = [];
     for (let i = 0; i < 10; i++) {
-        const droid = () => {
+        const DROID = () => {
             console.log("D" + i);
         };
-        droids.push(droid);
+        DROIDS.push(DROID);
     }
-    return droids;
+    return DROIDS;
 }
 for (let d of makeDroids()) {
     d();
