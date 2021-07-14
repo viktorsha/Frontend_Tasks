@@ -66,3 +66,30 @@ Each function call should be started with "Check started".*
 *Create two inputs in one form. On update of the input after 1 second update another input.*
 
 [Look here](https://codepen.io/viktor_sha/pen/QWvdWVX)
+
+# Task 4
+
+<h3> 1. Using promises</h3>
+
+*Complete code using Promise. Function needs to print 'hi' after 2 seconds.*
+
+[Look here](https://codepen.io/viktor_sha/pen/RwVKywB)
+
+<h3>2. Scopes, var, let, const</h3>
+
+*Rewrite the code so that it will print a sequence of "D0", "D1", ...*
+
+[Look here](https://codepen.io/viktor_sha/pen/QWvdrwL)
+
+<h3> 3. Using promises</h3>
+
+*Write a Promise which will print "Success" if random taken time is less than 2 seconds, and error if not.*
+
+[Look here](https://codepen.io/viktor_sha/pen/xxdgjbr)
+
+<h3> 4. Asynchronous operations</h3>
+
+*Change recursion on a loop in demoGithubUser function. Use async/await.*
+
+[Look here](https://codepen.io/viktor_sha/pen/bGWgMNy)
+
