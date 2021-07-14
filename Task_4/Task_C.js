@@ -1,7 +1,7 @@
-const DELAY = new Promise((resolve, reject)=>{
+const delay = new Promise((resolve, reject)=>{
     try{
-        const RANDOMNUMBER = Math.random()*10000;
-        if (RANDOMNUMBER<2000){
+        const randomNumber = Math.random()*10000;
+        if (randomNumber<2000){
             resolve("Operation ended successfully");
         } else {
             reject("Operation failed");
@@ -10,5 +10,5 @@ const DELAY = new Promise((resolve, reject)=>{
         reject("Unknown error");
     }
 })
-DELAY.then((message)=>console.log(message))
+delay.then((message)=>console.log(message))
 .catch((message)=>console.error(message));

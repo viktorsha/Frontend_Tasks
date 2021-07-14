@@ -7,7 +7,7 @@ function add(op1, op2) {
     return this.name + ' can count to ' + (op1 + op2);
 }
 
-const VOLTRON = new Robot('Voltron');
+const voltron = new Robot('Voltron');
 console.log(add(0, 1));
-console.log(add.apply(VOLTRON, [1, 2]));
-console.log(add.call(VOLTRON, 20, 30));
+console.log(add.apply(voltron, [1, 2]));
+console.log(add.call(voltron, 20, 30));

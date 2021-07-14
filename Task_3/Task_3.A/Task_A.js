@@ -28,31 +28,31 @@ const DOWNLOADS = [
 const STATUSES = {pending: "Pending", done: "Done", failed: "Failed", end: "End"};
 
 function generateTableHead(table, data) {
-    const THEAD = table.createTHead();
-    const ROW = THEAD.insertRow();
+    const thead = table.createTHead();
+    const row = thead.insertRow();
     for (let key of data) {
-        const TH = document.createElement("th");
-        const TEXT = document.createTextNode(key);
-        TH.appendChild(TEXT);
-        ROW.appendChild(TH);
+        const th = document.createElement("th");
+        const text = document.createTextNode(key);
+        th.appendChild(text);
+        row.appendChild(th);
     }
 }
 
 function generateTable(table, data) {
     for (let element of data) {
-        const ROW = table.insertRow();
+        const row = table.insertRow();
         for (let key in element) {
-            const CELL = ROW.insertCell();
-            const TEXT = document.createTextNode(element[key]);
-            CELL.appendChild(TEXT);
+            const cell = row.insertCell();
+            const text = document.createTextNode(element[key]);
+            cell.appendChild(text);
         }
     }
 }
 
 function checkStatuses() {
     console.log("Check started");
-    const CELLS = document.getElementsByTagName("td");
-    for (const cell of CELLS) {
+    const cells = document.getElementsByTagName("td");
+    for (const cell of cells) {
         if (cell.innerHTML === STATUSES.pending) {
             cell.innerHTML = STATUSES.done;
             return;
@@ -61,15 +61,15 @@ function checkStatuses() {
     return STATUSES.end;
 }
 
-const TABLE = document.querySelector("table");
-const HEADERDATA = Object.keys(DOWNLOADS[0]);
-generateTableHead(TABLE, HEADERDATA);
-generateTable(TABLE, DOWNLOADS);
+const table = document.querySelector("table");
+const headerData = Object.keys(DOWNLOADS[0]);
+generateTableHead(table, headerData);
+generateTable(table, DOWNLOADS);
 
 function statusChecker() {
     const INTERVAL = setInterval(function () {
-        const RESULT = checkStatuses(TABLE)
-        if (RESULT === STATUSES.end)
+        const result = checkStatuses(table)
+        if (result === STATUSES.end)
             clearInterval(INTERVAL);
     }, 5000);
 }

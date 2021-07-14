@@ -18,10 +18,10 @@ async function loadJson(url) {
 async function demoGithubUser() {
     let user;
     while (true) {
-        const NAME = prompt("Login?", "iliakan");
+        const name = prompt("Login?", "iliakan");
 
         try {
-            user = await loadJson(`https://api.github.com/users/${NAME}`);
+            user = await loadJson(`https://api.github.com/users/${name}`);
             break;
         } catch (err) {
             if (err instanceof HttpError && err.response.status == 404) {

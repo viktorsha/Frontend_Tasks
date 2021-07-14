@@ -9,13 +9,13 @@ Function.prototype.apply = function (context, ...args) {
     if (typeof this !== 'function') {
         throw new TypeError('not function')
     }
-    const FUNC = this;
+    const func = this;
     context = context || window;
     args = args ? args[0] : [];
-    context.func = FUNC;
-    const RESULT = context.func(...args);
+    context.func = func;
+    const result = context.func(...args);
     delete context.func;
-    return RESULT;
+    return result;
 }
 
 const bind = function (func, context) {

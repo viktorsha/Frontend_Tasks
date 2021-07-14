@@ -10,6 +10,6 @@ function getUnique(array) {
     return Object.keys(dict).find(key => dict[key] === 1);
 }
 
-const testArray = [1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5];
-const uniqueElement = getUnique(testArray);
+const NUMBERS = [1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 5];
+const uniqueElement = getUnique(NUMBERS);
 console.log(uniqueElement);
