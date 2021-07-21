@@ -7,10 +7,10 @@ function plusSlides(slideNumber) {
 function showSlides(slideNumber) {
     const slides = document.querySelectorAll(".slider-item");
     if (slideNumber > slides.length) {
-        slideIndex = 1
+        slideIndex = 1;
     }
     if (slideNumber < 1) {
-        slideIndex = slides.length
+        slideIndex = slides.length;
     }
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
