@@ -1,5 +1,7 @@
 import React from "react";
-const styles = {
+import {makeStyles} from "@material-ui/core";
+
+export const styles = {
     tableGrid: {
         display: "flex",
         justifyContent: "center"
@@ -11,6 +13,24 @@ const styles = {
     container: {
         display: "flex",
         justifyContent: "space-between"
+    },
+    saveChangesBtn: {
+        marginLeft: "7px"
+    },
+    descriptionField: {
+        marginLeft: "10px",
+        width: "300px",
+        font: "inherit"
+    },
+    EditBtn: {
+        display: "flex"
     }
 }
-export default styles
+export const useStyle = makeStyles(theme=> ({
+    root: {
+        "& .MuiFormControl-root": {
+            width: "80%",
+            margin: theme.spacing(1)
+        }
+    }
+}))
