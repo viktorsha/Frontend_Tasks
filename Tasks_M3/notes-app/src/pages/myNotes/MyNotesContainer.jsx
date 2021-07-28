@@ -11,10 +11,7 @@ export const MyNotesContainer = () => {
         setSelectedNote(id)
     }
     return (
-        <div>
             <MyNotes selectedNote={selectedNote} setNote={setCurrentNote}/>
-        </div>
-
     );
 }
 
