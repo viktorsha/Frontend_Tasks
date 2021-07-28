@@ -24,6 +24,17 @@ export const styles = {
     },
     EditBtn: {
         display: "flex"
+    },
+    ul:{
+        display: "flex",
+        justifyContent: "flex-end"
+    },
+    li:{
+        marginLeft: "30px"
+    },
+    lastLi: {
+        marginLeft: "30px",
+        marginRight: "30px"
     }
 }
 export const useStyle = makeStyles(theme=> ({

@@ -27,7 +27,10 @@ export const MyNotesContainer = () => {
         )
     }
     return (
-            <MyNotes selectedNote={selectedNote} setNote={setCurrentNote}/>
+        <div>
+            <MyNotes selectedNote={selectedNote} setNote={setCurrentNote} openPopup={openPopup} setOpenPopup={setOpenPopup} changeNote={changeNote} tableData={tableData}/>
+        </div>
+
     );
 }
 

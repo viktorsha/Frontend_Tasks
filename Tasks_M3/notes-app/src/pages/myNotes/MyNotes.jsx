@@ -1,7 +1,7 @@
 import React from "react";
 import {Button, Card, CardContent, Grid, Typography} from "@material-ui/core";
 import {DataGrid} from "@material-ui/data-grid";
-import {NOTES_COLUMNS} from "../../constants";
+import {NOTES, NOTES_COLUMNS} from "../../constants";
 import Popup from "../../components/Popup"
 import {styles} from "../../styles";
 import MyNotesForm from "./MyNotesForm"
