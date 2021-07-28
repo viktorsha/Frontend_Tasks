@@ -1,5 +1,6 @@
 import React from "react";
 import {styles} from "../../styles";
+import ErrorPic from "../../images/ErrorPic.png"
 
 export const NoMatch = () => {
     return (
@@ -7,7 +8,7 @@ export const NoMatch = () => {
             <img className={"SpacePic"} src={"https://wallpaperchat.com/walls/full/e/a/d/953387.jpg"} alt={"Not found"}
                  style={styles.SpacePic}/>
             <img className={"NotFoundPic"}
-                 src="https://www.artzstudio.com/wp-content/uploads/2020/05/404-error-not-found-page-lost-1024x788.png"
+                 src={ErrorPic}
                  alt={"Not found"} style={styles.NotFoundPic}/>
         </div>
     )
