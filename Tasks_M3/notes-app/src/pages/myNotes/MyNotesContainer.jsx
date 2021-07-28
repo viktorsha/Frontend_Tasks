@@ -13,21 +13,23 @@ export const MyNotesContainer = () => {
     const setCurrentNote = (id) => {
         setSelectedNote(id);
     }
-    function changeNote(values){
+
+    function changeNote(values) {
         setTableData(
-            tableData.map(note=>{
-                if (note.id===values.id)
-                {
-                    tableData[values.id-1].title=values.title;
-                    tableData[values.id-1].description=values.description;
-                    tableData[values.id-1].date=values.date;
+            tableData.map(note => {
+                if (note.id === values.id) {
+                    tableData[values.id - 1].title = values.title;
+                    tableData[values.id - 1].description = values.description;
+                    tableData[values.id - 1].date = values.date;
                 }
                 return note;
             })
         )
     }
+
     return (
-            <MyNotes selectedNote={selectedNote} setNote={setCurrentNote}/>
+        <MyNotes selectedNote={selectedNote} setNote={setCurrentNote} openPopup={openPopup} setOpenPopup={setOpenPopup}
+                 changeNote={changeNote} tableData={tableData}/>
     );
 }
 
