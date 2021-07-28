@@ -29,11 +29,9 @@ export const styles = {
         display: "flex",
         justifyContent: "flex-end",
         listStyleType: "none"
-
     },
     li: {
-        marginLeft: "20px",
-
+        marginLeft: "20px"
     },
     a: {
         textDecoration: "none",
@@ -77,7 +75,7 @@ export const styles = {
     },
     SpacePic: {
         position: "absolute",
-        top: 0,
+        top: 55,
         left: 0,
         right: 0,
         bottom: 0,

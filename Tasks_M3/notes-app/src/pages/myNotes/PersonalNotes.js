@@ -2,10 +2,10 @@ import React from "react";
 import {styles} from "../../styles";
 import {MyNotesContainer} from "./MyNotesContainer";
 
-export const SharedNotes = () => {
+export const PersonalNotes = () => {
     return (
         <div>
-            <h1 style={styles.motoText}>Shared notes</h1>
+            <h1 style={styles.motoText}>Personal notes</h1>
             <MyNotesContainer/>
         </div>
     )
