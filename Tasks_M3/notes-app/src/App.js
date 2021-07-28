@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Navigation} from "./pages/myNotes/Navigation";
 import {SharedNotes} from "./pages/myNotes/SharedNotes";
 import {About} from "./pages/myNotes/About";
+import {NoMatch} from "./pages/myNotes/NoMatch";
 
 const App = () => {
     return (
@@ -21,6 +22,13 @@ const App = () => {
                     <Route path="/Frontend_Tasks/my-notes">
                         <MyNotesContainer/>
                     </Route>
+                    <Route path="/Frontend_Tasks">
+                        <About/>
+                    </Route>
+                    <Route path="*">
+                        <NoMatch/>
+                    </Route>
+
 
                 </Switch>
             </Router>

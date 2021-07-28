@@ -1,11 +1,10 @@
 import React from "react";
-import {MyNotes} from "./MyNotes";
-import {Navigation} from "./Navigation";
+import {styles} from "../../styles";
 
 export const SharedNotes = () => {
     return(
         <div>
-            <h1>Shared notes</h1>
+            <h1 style={styles.motoText}>Shared notes</h1>
         </div>
     )
 }
