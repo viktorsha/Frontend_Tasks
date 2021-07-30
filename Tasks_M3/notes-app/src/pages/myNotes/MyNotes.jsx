@@ -1,34 +1,47 @@
 import React from "react";
-import {Card, CardContent, Grid, Typography} from "@material-ui/core";
+import {Button, Card, CardContent, Grid, Typography} from "@material-ui/core";
 import {DataGrid} from "@material-ui/data-grid";
-import {NOTES, NOTES_COLUMNS} from "../../constants";
-import styles from "../../styles";
+import {NOTES_COLUMNS} from "../../constants";
+import Popup from "../../components/Popup";
+import {styles} from "../../styles";
+import MyNotesFormContainer from "./MyNotesFormContainer";
 
-
-export const MyNotes = ({selectedNote, setNote}) => {
-    const activeNote = NOTES.find(note => note.id === selectedNote);
+export const MyNotes = ({selectedNote, setNote, openPopup, setOpenPopup, changeNote, tableData}) => {
+    const activeNote = tableData.find(note => note.id === selectedNote);
     return (
-        <Grid container spacing={10}>
-            <Grid container item xs={6} spacing={3}>
-                <DataGrid rows={NOTES} columns={NOTES_COLUMNS} pageSize={3} autoHeight={true}
-                          onRowClick={(selectedItem) => setNote(selectedItem.row.id)}>
-                </DataGrid>
+        <div>
+            <Grid container spacing={10}>
+                <Grid container item xs={6} spacing={3}>
+                    <DataGrid rows={tableData} columns={NOTES_COLUMNS} pageSize={3} autoHeight={true}
+                              onRowClick={(selectedItem) => setNote(selectedItem.row.id)}>
+                    </DataGrid>
+                </Grid>
+                <Grid container item xs={6} spacing={3}>
+                    <Card variant="outlined" style={styles.cardName}>
+                        <CardContent>
+                            <Typography color="textPrimary" variant={"h4"}>
+                                {activeNote.title}
+                            </Typography>
+                            <Typography>
+                                {activeNote.description}
+                            </Typography>
+                            <Typography>
+                                <b>{activeNote.date}</b>
+                            </Typography>
+                            <hr/>
+                            {activeNote.title &&
+                            <Button className={"EditBtn"} variant="contained" color="primary" style={styles.EditBtn}
+                                    onClick={() => setOpenPopup(true)}>Edit note</Button>}
+                        </CardContent>
+                    </Card>
+                    <Popup
+                        title="Edit form"
+                        openPopup={openPopup}
+                        setOpenPopup={setOpenPopup}>
+                        <MyNotesFormContainer id={activeNote.id} onChange={changeNote} setOpenPopup={setOpenPopup}/>
+                    </Popup>
+                </Grid>
             </Grid>
-            <Grid container item xs={6} spacing={3}>
-                <Card variant="outlined" style={styles.cardName}>
-                    <CardContent>
-                        <Typography color="textPrimary" variant={"h4"}>
-                            {activeNote.title}
-                        </Typography>
-                        <Typography>
-                            {activeNote.description}
-                        </Typography>
-                        <Typography>
-                            <b>{activeNote.date}</b>
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Grid>
-        </Grid>
+        </div>
     );
 }
