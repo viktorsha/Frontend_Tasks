@@ -86,7 +86,7 @@ export const styles = {
     NotFoundPic: {
         position: "absolute",
         top: "80px",
-        left: "400px"
+        left: "350px"
     },
     nav: {
         marginBottom: "40px"
