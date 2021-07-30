@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Frontend_Tasks/static/css/main.57cede9c.chunk.css",
-    "main.js": "/Frontend_Tasks/static/js/main.3f6bd932.chunk.js",
-    "main.js.map": "/Frontend_Tasks/static/js/main.3f6bd932.chunk.js.map",
+    "main.js": "/Frontend_Tasks/static/js/main.5c24ef65.chunk.js",
+    "main.js.map": "/Frontend_Tasks/static/js/main.5c24ef65.chunk.js.map",
     "runtime-main.js": "/Frontend_Tasks/static/js/runtime-main.0a7c6482.js",
     "runtime-main.js.map": "/Frontend_Tasks/static/js/runtime-main.0a7c6482.js.map",
     "static/js/2.3371797b.chunk.js": "/Frontend_Tasks/static/js/2.3371797b.chunk.js",
@@ -11,13 +11,12 @@
     "static/js/3.d839c2a5.chunk.js.map": "/Frontend_Tasks/static/js/3.d839c2a5.chunk.js.map",
     "index.html": "/Frontend_Tasks/index.html",
     "static/css/main.57cede9c.chunk.css.map": "/Frontend_Tasks/static/css/main.57cede9c.chunk.css.map",
-    "static/js/2.3371797b.chunk.js.LICENSE.txt": "/Frontend_Tasks/static/js/2.3371797b.chunk.js.LICENSE.txt",
-    "static/media/ErrorPic.32097c1e.png": "/Frontend_Tasks/static/media/ErrorPic.32097c1e.png"
+    "static/js/2.3371797b.chunk.js.LICENSE.txt": "/Frontend_Tasks/static/js/2.3371797b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0a7c6482.js",
     "static/js/2.3371797b.chunk.js",
     "static/css/main.57cede9c.chunk.css",
-    "static/js/main.3f6bd932.chunk.js"
+    "static/js/main.5c24ef65.chunk.js"
   ]
 }
