@@ -2,29 +2,22 @@ import React, {useEffect, useState} from "react";
 import {NOTES} from "../../constants/index";
 import {MyNotes} from "./MyNotes";
 
-export const MyNotesContainer = () => {
+const MyNotesContainer = () => {
     const [selectedNote, setSelectedNote] = useState(NOTES[0].id);
     const [openPopup, setOpenPopup] = useState(false);
-    const [tableData, setTableData] = useState(NOTES)
+    const [tableData, setTableData] = useState(NOTES);
 
     useEffect(() => {
-        localStorage.setItem("Notes", JSON.stringify(tableData));
+        localStorage.setItem("Notes", JSON.stringify(tableData))
     }, [tableData]);
+
     const setCurrentNote = (id) => {
         setSelectedNote(id);
     }
 
-    function changeNote(values) {
-        setTableData(
-            tableData.map(note => {
-                if (note.id === values.id) {
-                    tableData[values.id - 1].title = values.title;
-                    tableData[values.id - 1].description = values.description;
-                    tableData[values.id - 1].date = values.date;
-                }
-                return note;
-            })
-        )
+    const changeNote = (chosenNote) => {
+        const updatedNotes = tableData.map(note => note.id === chosenNote.id ? chosenNote : note);
+        setTableData(updatedNotes);
     }
 
     return (
@@ -32,4 +25,4 @@ export const MyNotesContainer = () => {
                  changeNote={changeNote} tableData={tableData}/>
     );
 }
-
+export default MyNotesContainer;

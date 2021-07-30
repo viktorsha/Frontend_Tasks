@@ -90,8 +90,18 @@ export const styles = {
     },
     nav: {
         marginBottom: "40px"
+    },
+    dialogContainer: {
+        display: "flex",
+        justifyContent: "space-between"
+    },
+    dialogContainer__text: {
+        margin: 0
+    },
+    dialogContainer__closeButton: {
+        width: "20px",
+        height: "40px"
     }
-
 }
 export const useStyle = makeStyles(theme => ({
     root: {

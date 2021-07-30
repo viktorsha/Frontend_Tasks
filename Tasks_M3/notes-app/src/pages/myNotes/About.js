@@ -1,5 +1,4 @@
 import React from "react";
-import {Navigation} from "./Navigation";
 import {styles} from "../../styles";
 
 export const About = () => {
@@ -32,10 +31,7 @@ export const About = () => {
                             </ul>
                         </div>
                     </div>
-
                 </main>
-
-
         </div>
     )
 }

@@ -1,14 +1,14 @@
 import React from "react";
 import {Button, Dialog, DialogContent, DialogTitle} from "@material-ui/core";
+import {styles} from "../styles";
 
-export default function Popup(props) {
-    const {title, children, openPopup, setOpenPopup} = props;
+const Popup = ({title, children, openPopup, setOpenPopup}) => {
     return (
         <Dialog open={openPopup}>
             <DialogTitle>
-                <div style={{display: "flex", justifyContent: "space-between"}}>
-                    <h4 style={{margin: 0}}>{title}</h4>
-                    <Button variant={"outlined"} color={"primary"} style={{width: "20px", height: "40px"}}
+                <div className="dialogContainer" style={styles.dialogContainer}>
+                    <h4 className="dialogContainer__text" style={styles.dialogContainer__text}>{title}</h4>
+                    <Button className="dialogContainer__closeButton" variant={"outlined"} color={"primary"} style={styles.dialogContainer__closeButton}
                             onClick={() => setOpenPopup(false)}>X</Button>
                 </div>
             </DialogTitle>
@@ -18,3 +18,5 @@ export default function Popup(props) {
         </Dialog>
     )
 }
+
+export default Popup;

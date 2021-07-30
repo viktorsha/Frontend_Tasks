@@ -2,9 +2,9 @@ import React from "react";
 import {Button, Card, CardContent, Grid, Typography} from "@material-ui/core";
 import {DataGrid} from "@material-ui/data-grid";
 import {NOTES_COLUMNS} from "../../constants";
-import Popup from "../../components/Popup"
+import Popup from "../../components/Popup";
 import {styles} from "../../styles";
-import MyNotesForm from "./MyNotesForm"
+import MyNotesFormContainer from "./MyNotesFormContainer";
 
 export const MyNotes = ({selectedNote, setNote, openPopup, setOpenPopup, changeNote, tableData}) => {
     const activeNote = tableData.find(note => note.id === selectedNote);
@@ -29,7 +29,7 @@ export const MyNotes = ({selectedNote, setNote, openPopup, setOpenPopup, changeN
                                 <b>{activeNote.date}</b>
                             </Typography>
                             <hr/>
-                            {activeNote.title !== "" &&
+                            {activeNote.title &&
                             <Button className={"EditBtn"} variant="contained" color="primary" style={styles.EditBtn}
                                     onClick={() => setOpenPopup(true)}>Edit note</Button>}
                         </CardContent>
@@ -38,11 +38,10 @@ export const MyNotes = ({selectedNote, setNote, openPopup, setOpenPopup, changeN
                         title="Edit form"
                         openPopup={openPopup}
                         setOpenPopup={setOpenPopup}>
-                        <MyNotesForm id={activeNote.id} onChange={changeNote} setOpenPopup={setOpenPopup}/>
+                        <MyNotesFormContainer id={activeNote.id} onChange={changeNote} setOpenPopup={setOpenPopup}/>
                     </Popup>
                 </Grid>
             </Grid>
         </div>
-
     );
 }

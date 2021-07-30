@@ -1,6 +1,6 @@
 import React from "react";
 import {styles} from "../../styles";
-import {MyNotesContainer} from "./MyNotesContainer";
+import MyNotesContainer from "./MyNotesContainer";
 
 export const SharedNotes = () => {
     return (
